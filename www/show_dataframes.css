@@ -1,0 +1,80 @@
+body{
+	background-color: salmon;
+	font-family: sans-serif;
+	display: flex;
+	flex-flow: row wrap;
+	margin: 0.25em;
+	padding: 0px;
+}
+body.connected{
+	background-color: lightgreen;
+}
+body > *{
+	margin: 0.25em;
+}
+body > table{
+	display: inline-table; /* for flex */
+}
+body > div{
+	display: inline-block; /* for flex */
+}
+
+table#outputTable,
+table#outputTable>*>tr>*,
+table#outputTable>tr>*,
+table#maskTable,
+table#maskTable>thead>tr>*,
+table#whitelistTable,
+table#whitelistTable>thead>tr>*,
+table#blacklistTable,
+table#blacklistTable>thead>tr>*,
+table#inactivityTimeoutTable,
+table#inactivityTimeoutTable>thead>tr>*{
+	padding-left: 0.5em;
+	padding-right: 0.5em;
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+
+table#maskTable>tbody>tr>th,
+table#whitelistTable>tfoot>tr>th,
+table#blacklistTable>tfoot>tr>th,
+table#inactivityTimeoutTable>tfoot>tr>th{
+	padding-left: 0.5em;
+	text-align: right;
+}
+
+table#outputTable>tbody>tr>*,
+table#outputTable>tr>*,
+input#maskMask,
+input#maskMaskingResult,
+input#whitelistNewValue,
+input#blacklistNewValue,
+table#whitelistTable>tbody>tr>td:nth-child(2),
+table#blacklistTable>tbody>tr>td:nth-child(2){
+	font-family: Consolas, Monaco, "Lucida Console", monospace;
+}
+
+input#maskMask,
+input#maskMaskingResult,
+input#whitelistNewValue,
+input#blacklistNewValue{
+	max-width: 8em;
+}
+input#inactivityTimeoutValue{
+	max-width: 4em;
+}
+
+table>tr>*>input:only-child,
+table>*>tr>*>input:only-child{
+	width: 100%;
+}
+
+input[type=text]:invalid{
+	border-color: red;
+	background-color: yellow;
+}
+
+input.actionNeeded{
+	font-weight: bold;
+}
